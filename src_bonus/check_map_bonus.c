@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_map.c                                        :+:      :+:    :+:   */
+/*   check_map_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/05 15:27:31 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/01/22 19:57:27 by bbenidar         ###   ########.fr       */
+/*   Created: 2023/01/23 15:09:50 by bbenidar          #+#    #+#             */
+/*   Updated: 2023/01/25 18:09:51 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../so_long_bonus.h"
 
 int	ft_check_rctgl(t_map *bb)
 {
@@ -59,7 +59,8 @@ void	ft_check_map2(t_map *bb)
 		bb->player++;
 		bb->i++;
 	}
-	else if (bb->str[bb->j][bb->i] == '1' || bb->str[bb->j][bb->i] == '0')
+	else if (bb->str[bb->j][bb->i] == '1' || bb->str[bb->j][bb->i] == '0'
+			|| bb->str[bb->j][bb->i] == 'M')
 		bb->i++;
 	else
 	{

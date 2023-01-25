@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_move.c                                          :+:      :+:    :+:   */
+/*   ft_move_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/07 14:33:00 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/01/21 18:44:12 by bbenidar         ###   ########.fr       */
+/*   Created: 2023/01/23 14:52:51 by bbenidar          #+#    #+#             */
+/*   Updated: 2023/01/25 18:44:09 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../so_long_bonus.h"
 
 int	ft_check_collect(t_map *bb)
 {
@@ -49,4 +49,14 @@ int	ft_move(int keycode, t_map *bb)
 		ft_move_left(bb);
 	ft_put_draw(bb);
 	return (0);
+}
+
+void	print_move(t_map *bb)
+{
+	char	*str;
+
+	str = ft_itoa(bb->move);
+	mlx_string_put(bb->mlx_ptr, bb->win_ptr, 20, 20, 0xFFFFFF, "MOVES : ");
+	mlx_string_put(bb->mlx_ptr, bb->win_ptr, 95, 20, 0xFFFFFF, str);
+	free(str);
 }

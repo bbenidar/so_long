@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 15:38:50 by bbenidar          #+#    #+#             */
-/*   Updated: 2022/11/14 14:08:07 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/01/20 20:22:55 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	ft_print_ptr(char *s)
 
 	ptr = (unsigned long long)s;
 	print_length = 0;
-	print_length += write(1, "0x", 2);//0x
+	print_length += write(1, "0x", 2);
 	if (ptr == 0)
 		print_length += write(1, "0", 1);
 	else

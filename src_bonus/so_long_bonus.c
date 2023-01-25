@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   so_long_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/03 11:23:10 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/01/21 18:44:27 by bbenidar         ###   ########.fr       */
+/*   Created: 2023/01/23 14:47:16 by bbenidar          #+#    #+#             */
+/*   Updated: 2023/01/25 17:52:36 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../so_long_bonus.h"
 
 int	ft_map_colum(t_map *bb, char **av)
 {
@@ -52,7 +52,7 @@ void	ft_read_map(t_map *bb, char **av)
 	}
 	while (bb->j < bb->i)
 		bb->str[bb->j++] = get_next_line(bb->fd);
-	bb->str[bb->j] = NULL;
+	bb->str[bb->j] = 0;
 }
 
 int	main(int ac, char **av)
@@ -66,11 +66,7 @@ int	main(int ac, char **av)
 		ft_printf("\033[0;31mERROR(pleas insert map *.ber !)\n");
 		exit(1);
 	}
-	if (ft_strncmp(av[1] + (ft_strlen(av[1]) - 4), ".ber", 4))
-	{
-		ft_printf("\033[0;31mERROR <Invalid entry (.ber!!)>", 1);
-		exit(1);
-	}
+	ft_check_ext(av);
 	ft_read_map(&bb, av);
 	ft_back_tracking(&bb);
 	ft_check_map(&bb);
@@ -80,6 +76,8 @@ int	main(int ac, char **av)
 	ft_draw_map(&bb);
 	mlx_hook(bb.win_ptr, 17, 0, ft_close, &bb);
 	mlx_hook(bb.win_ptr, 2, 0, ft_move, &bb);
+	bb.count = 0;
+	mlx_loop_hook(bb.mlx_ptr, ft_enemy, &bb);
 	mlx_loop(bb.mlx_ptr);
 	return (0);
 }

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_map.c                                         :+:      :+:    :+:   */
+/*   draw_map_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/06 13:15:56 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/01/23 14:55:35 by bbenidar         ###   ########.fr       */
+/*   Created: 2023/01/23 15:08:30 by bbenidar          #+#    #+#             */
+/*   Updated: 2023/01/25 18:08:38 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../so_long_bonus.h"
 
 void	ft_draw_img(t_map *bb)
 {
@@ -31,6 +31,13 @@ void	ft_draw_img(t_map *bb)
 	else if (bb->str[bb->i][bb->j] == '0')
 		mlx_put_image_to_window(bb->mlx_ptr,
 			bb->win_ptr, bb->backgr, bb->x, bb->y);
+	else if (bb->str[bb->i][bb->j] == 'M')
+	{
+		mlx_put_image_to_window(bb->mlx_ptr,
+			bb->win_ptr, bb->backgr, bb->x, bb->y);
+		mlx_put_image_to_window(bb->mlx_ptr,
+			bb->win_ptr, bb->enemy, bb->x, bb->y);
+	}
 }
 
 void	ft_draw_image(t_map *bb)
@@ -92,6 +99,9 @@ void	ft_draw(t_map *bb)
 	ft_check(bb, bb->door);
 	bb->collect = mlx_xpm_file_to_image(bb->mlx_ptr,
 			"./xpm/coin.xpm", &(bb->width), &(bb->height));
+	ft_check(bb, bb->collect);
+	bb->enemy = mlx_xpm_file_to_image(bb->mlx_ptr,
+			"./xpm/enemy.xpm", &(bb->width), &(bb->height));
 	ft_check(bb, bb->collect);
 }
 

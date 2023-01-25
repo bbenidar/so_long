@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/03 11:23:23 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/01/24 15:07:48 by bbenidar         ###   ########.fr       */
+/*   Created: 2023/01/23 14:46:16 by bbenidar          #+#    #+#             */
+/*   Updated: 2023/01/25 18:47:53 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 # include "printf/ft_printf.h"
 # include <fcntl.h>
 # include <mlx.h>
@@ -46,6 +46,9 @@ typedef struct b_map
 	void	*collect;
 	char	**strback;
 	int		move;
+	void	*enemy;
+	void	*enemy1;
+	int		count;
 }			t_map;
 
 //--------------------------FONCTION PROTOTYPE--------------------------//
@@ -86,5 +89,9 @@ void		copystr(t_map *bb);
 void		ft_move_up(t_map *bb);
 void		ft_move_down(t_map *bb);
 void		ft_free(t_map *bb);
+int			ft_enemy(t_map *bb);
+int			ft_lose(t_map *bb);
+void		print_move(t_map *bb);
+void		ft_check_ext(char **av);
 
 #endif

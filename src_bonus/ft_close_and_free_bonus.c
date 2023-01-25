@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_close_and_free.c                                :+:      :+:    :+:   */
+/*   ft_close_and_free_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/05 15:53:14 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/01/21 19:52:52 by bbenidar         ###   ########.fr       */
+/*   Created: 2023/01/23 15:06:48 by bbenidar          #+#    #+#             */
+/*   Updated: 2023/01/25 18:10:04 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../so_long_bonus.h"
 
 void	ft_free_bktr(t_map *bb)
 {
@@ -54,7 +54,7 @@ int	ft_win(t_map *bb)
 	ft_printf(" \\ V  V /  | | | | | |\n");
 	ft_printf("  \\_/\\_/   |_| |_| |_|\n");
 	ft_printf("                  \n");
-	exit(1);
+	exit(0);
 	return (0);
 }
 

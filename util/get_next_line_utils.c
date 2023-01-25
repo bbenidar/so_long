@@ -6,12 +6,11 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 18:31:33 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/01/06 12:19:54 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/01/20 20:21:38 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
-
 
 char	*ft_line(char *str)
 {
@@ -36,6 +35,7 @@ char	*ft_line(char *str)
 	line[j] = '\0';
 	return (line);
 }
+
 char	*ft_read(char *str, int fd)
 {
 	char	*buff;
