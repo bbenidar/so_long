@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 14:33:00 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/01/21 18:44:12 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/01/26 14:35:37 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,7 @@ int	ft_check_collect(t_map *bb)
 int	ft_move(int keycode, t_map *bb)
 {
 	if (keycode == 53)
-	{
-		ft_printf("%d\n", keycode);
 		ft_close(bb);
-	}
 	if (keycode == 13 || keycode == 126)
 		ft_move_up(bb);
 	if (keycode == 1 || keycode == 125)

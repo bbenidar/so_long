@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 14:47:16 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/01/25 17:52:36 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/01/26 21:07:02 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ int	ft_map_colum(t_map *bb, char **av)
 void	ft_read_map(t_map *bb, char **av)
 {
 	bb->i = ft_map_colum(bb, av);
+	if (bb->i * 64 > 1500)
+	{
+		ft_printf("ERROR MAP SO LONG\n");
+		exit(1);
+	}
 	bb->str = (char **)malloc((bb->i + 1) * sizeof(char *));
 	if (!bb->str)
 	{
@@ -68,11 +73,11 @@ int	main(int ac, char **av)
 	}
 	ft_check_ext(av);
 	ft_read_map(&bb, av);
-	ft_back_tracking(&bb);
 	ft_check_map(&bb);
 	ft_check_wall(&bb);
 	ft_check_wall_sidebar(&bb);
 	ft_check_rctgl(&bb);
+	ft_back_tracking(&bb);
 	ft_draw_map(&bb);
 	mlx_hook(bb.win_ptr, 17, 0, ft_close, &bb);
 	mlx_hook(bb.win_ptr, 2, 0, ft_move, &bb);

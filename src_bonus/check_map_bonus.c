@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:09:50 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/01/25 18:09:51 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/01/28 20:59:29 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	ft_check_map(t_map *bb)
 	}
 	if (bb->player != 1 || bb->escape < 1 || bb->collectible < 1)
 	{
-		ft_printf("ERROR IN MAP\n");
+		ft_printf("ERROR  IN MAP\n");
 		ft_close(bb);
 	}
 }

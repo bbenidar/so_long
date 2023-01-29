@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 14:46:16 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/01/25 18:47:53 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/01/27 20:51:29 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
 # endif

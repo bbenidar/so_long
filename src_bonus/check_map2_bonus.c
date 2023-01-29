@@ -6,7 +6,7 @@
 /*   By: bbenidar <bbenidar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:09:21 by bbenidar          #+#    #+#             */
-/*   Updated: 2023/01/23 15:11:29 by bbenidar         ###   ########.fr       */
+/*   Updated: 2023/01/26 21:06:05 by bbenidar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ int	ft_check_wall(t_map *bb)
 	int	i;
 
 	i = 0;
+	if (ft_strlen(bb->str[1]) * 64 > 2800)
+	{
+		ft_printf("ERROR MAP SO LONG\n");
+		ft_close(bb);
+	}
 	bb->j = ft_maplen(bb->str) - 1;
 	while (bb->str[0][i] && bb->str[bb->j][i])
 	{
